@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Big C's Products, LLC — High-Quality Goods for Everyday Living</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Source+Sans+3:wght@300;400;600&display=swap' rel='stylesheet'>
     <style>
         :root {
-            --navy: #001b3a;
+            --navy: #020b1c;
+            --blue: #013aaa;
+            --orange: #f36c21;
             --gold: #ffc400;
             --white: #ffffff;
-            --gray: #f4f4f4;
+            --gray: #f8f9fa;
             --text: #222222;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -25,85 +27,162 @@
             min-height: 100vh;
             text-align: center;
         }
-        header { padding: 40px 20px; border-bottom: 1px solid #eee; }
-        .logo { max-width: 180px; margin: 0 auto; }
+        header { padding: 40px 20px; }
+        .main-logo { max-width: 400px; width: 100%; margin: 0 auto; }
+        
         main {
             flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 60px 20px;
-            max-width: 800px;
+            padding: 40px 20px;
+            max-width: 1000px;
             margin: 0 auto;
         }
         h1 {
             font-family: 'Oswald', sans-serif;
-            font-size: 3.5rem;
+            font-size: 3rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 20px;
             color: var(--navy);
         }
         .coming-soon {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #666;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             letter-spacing: 4px;
             text-transform: uppercase;
         }
-        p {
+        p.intro {
             font-size: 1.25rem;
             line-height: 1.6;
             color: #444;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .divider {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--blue), var(--orange));
+            margin: 0 auto 30px;
+        }
+
+        .brands-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+            color: #888;
+        }
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+        .brand-item img {
+            max-width: 180px;
+            width: 100%;
+            height: auto;
+            filter: grayscale(20%);
+            transition: transform 0.3s, filter 0.3s;
+        }
+        .brand-item:hover img {
+            transform: scale(1.05);
+            filter: grayscale(0%);
+        }
+        .brand-name {
+            margin-top: 15px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: #555;
+        }
+
+        .cta-box {
+            background-color: var(--gray);
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 60px;
         }
         .brand-link {
             display: inline-block;
-            margin-top: 20px;
-            padding: 15px 30px;
-            background-color: var(--navy);
+            padding: 18px 36px;
+            background: linear-gradient(135deg, var(--blue) 0%, var(--orange) 100%);
             color: var(--white);
             text-decoration: none;
             font-family: 'Oswald', sans-serif;
             text-transform: uppercase;
             letter-spacing: 1px;
             border-radius: 4px;
-            transition: background 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-        .brand-link:hover { background-color: #002d5e; }
+        .brand-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
         footer {
-            padding: 40px 20px;
-            background-color: var(--gray);
+            padding: 60px 20px;
+            background-color: var(--navy);
+            color: #aaa;
             font-size: 0.9rem;
-            color: #888;
         }
-        .divider {
-            width: 60px;
-            height: 4px;
-            background-color: var(--gold);
-            margin: 0 auto 30px;
+        footer p { margin-bottom: 10px; }
+        .footer-tagline { color: var(--white); font-weight: 600; letter-spacing: 1px; }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            .brand-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="assets/logo.png" alt="Big C's Products, LLC" class="logo">
+        <img src='assets/logo.png' alt='Big C's Products, LLC' class='main-logo'>
     </header>
     <main>
-        <div class="coming-soon">Establishment 2026</div>
-        <h1>Big C's Products, LLC</h1>
-        <div class="divider"></div>
-        <p>
-            We are a family-owned holding company based in North Carolina, dedicated to developing and launching high-quality consumer brands built on performance and reliability.
+        <div class='coming-soon'>Establishment 2026</div>
+        <h1>Quality Products. Endless Possibilities.</h1>
+        <div class='divider'></div>
+        <p class='intro'>
+            Big C's Products, LLC is a North Carolina-based holding company dedicated to building a diverse portfolio of reliable, performance-driven consumer brands.
         </p>
-        <p>
-            Our flagship brand, <strong>Big C's Fishing Co.</strong>, is currently in development and launching soon on Amazon.
-        </p>
-        <a href="https://bigcsfishing.com" class="brand-link">Visit Big C's Fishing Co.</a>
+
+        <h2 class='brands-title'>Our Growing Brand Family</h2>
+        <div class='brand-grid'>
+            <div class='brand-item'>
+                <img src='assets/fishing-logo.png' alt='Big C's Fishing Co.'>
+                <div class='brand-name'>Fishing Co.</div>
+            </div>
+            <div class='brand-item'>
+                <img src='assets/electronics-logo.png' alt='Big C's Electronics'>
+                <div class='brand-name'>Electronics</div>
+            </div>
+            <div class='brand-item'>
+                <img src='assets/creatine-logo.png' alt='BC Creatine'>
+                <div class='brand-name'>Nutrition</div>
+            </div>
+            <div class='brand-item'>
+                <img src='assets/foot-logo.png' alt='Big C's Foot Products'>
+                <div class='brand-name'>Personal Care</div>
+            </div>
+        </div>
+
+        <div class='cta-box'>
+            <p style='margin-bottom: 20px; font-weight: 600;'>Visit our first flagship launch:</p>
+            <a href='https://bigcsfishing.com' class='brand-link'>Explore Big C's Fishing Co.</a>
+        </div>
     </main>
     <footer>
+        <p class='footer-tagline'>High-Quality Goods. Proven Performance.</p>
         <p>&copy; 2026 Big C's Products, LLC. All Rights Reserved.</p>
-        <p>High-Quality Goods. Proven Performance.</p>
+        <p>A family-owned business headquartered in North Carolina.</p>
     </footer>
 </body>
 </html>
